@@ -9,8 +9,9 @@ class Pokemon
 	private $attack;
 	private $weakness;
 	private $resistance;
+	private $oneliner;
 
-	public function __construct($pokemonName, $energyType, $hitPoints, $health, $attack, $weakness, $resistance)
+	public function __construct($pokemonName, $energyType, $hitPoints, $health, $attack, $weakness, $resistance, $oneliner)
 	{
 	    $this->pokemonName = $pokemonName;
 	    $this->energyType = $energyType;
@@ -19,9 +20,15 @@ class Pokemon
 	    $this->attack = $attack;
 	    $this->weakness = $weakness;
 	    $this->resistance = $resistance;
+	    $this->oneliner = $oneliner;
 	}
 
 	public function __toString() {
         return json_encode($this);
+    }
+
+    public function sayOneliner()
+    {
+        return $this->oneliner;
     }    
 }
