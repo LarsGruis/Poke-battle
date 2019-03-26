@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url('background.png');
+	background-size: cover;
+	background-position: center;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.pokemons_img {
+	width: 300px;
+	height: 300px;
+	display: block;
+	margin: 0 auto;
+}
+
+.pokemons_title {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding-top: 25px;
+}
+
+.vs-sign {
+	width: 150px;
+	height: 150px;
+	margin-top: 100px;
+}
