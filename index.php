@@ -1,9 +1,14 @@
 <?php
 
 require 'pokemon.php';
-
-$pikachu =  new Pokemon('Piet', 'Lightning', '60', 'Electric punch = 50', 'Pika Punch = 20', 'Fire', 'Fighting', 'test');
-$charmeleon =  new Pokemon('Kees', 'Fire', '60', 'Head Butt = 10', 'Flare = 30', 'Water', 'Lightning', 'test');
+require 'Attack.php';
+require 'Charmeleon.php';
+require 'Health.php';
+require 'HitPoints.php';
+require 'Resistance.php';
+require 'Weakness.php';
+require 'Pikachu.php';
+require 'EnergyType.php';
 
 print_r('<pre>'. $pikachu . '</pre>');
 
