@@ -1,6 +1,9 @@
 <?php
-
-class Resistance extends Pokemon {
-	private $EnergyType;
-	private $ResistanceValue;
+class Resistance {
+    public $EnergyType;
+    public $Value;
+    public function __construct($EnergyType, $Value) {
+        $this->EnergyType = $EnergyType;
+        $this->Value = $Value;
+    }
 }

@@ -1,69 +1,32 @@
 <?php
 
-class Pokemon
-{
-	private $pokemonName;
-	private $energyType;
-	private $hitPoints;
-	private $health;
-	private $attack;
-	private $weakness;
-	private $resistance;
-	private $oneliner;
+class Pokemon {
+    public static $Counter = 0;
+    public $Id; // een uniek nummer voor elk object, dus voor elke pokemon
+    public $EnergyType;
+    public $Name;
+    public $Health;
+    public $Attacks;
+    public $Weakness;
+    public $Resistance; 
 
-	public function __construct($pokemonName = null, $energyType = null, $hitPoints = null, $health = null, $attack = null, $weakness = null, $resistance = null, $oneliner = null)
-	{
-	    $this->pokemonName = $pokemonName;
-	    $this->energyType = $energyType;
-	    $this->hitPoints = $hitPoints;
-	    $this->health = $health;
-	    $this->attack = $attack;
-	    $this->weakness = $weakness;
-	    $this->resistance = $resistance;
-	    $this->oneliner = $oneliner;
-	}
-
-	public function __toString() {
-        return json_encode($this);
+    public function __construct($Name, $HealthPoints, $EnergyType) {
+        self::$Counter = self::$Counter + 1;
+        $this->Id = self::$Counter;
+        $this->Name = $Name;
+        $this->EnergyType = $EnergyType;
+        $this->Health = $HealthPoints;
+        $this->Attacks = [];
     }
 
-    public function getPokemonName()
-    {
-        return $this->pokemonName;
-    } 
+    //functie om de damage te berekenen
 
-    public function getEnergyType()
-    {
-        return $this->energyType;
+    public function DoDamage($energyType, $damage) {
+        $calculatedDamage = $dmg - $this->Defense;
+        if( $calculatedDamage > 0) {
+            $this->CurrentHealth = $this->CurrentHealth - $calculatedDamage;
+        }
     }
-
-    public function getHitPoints()
-    {
-        return $this->hitPoints;
-    } 
-
-    public function getHealth()
-    {
-        return $this->health;
-    }
-
-    public function getAttack()
-    {
-        return $this->attack;
-    }
-
-    public function getWeakness()
-    {
-        return $this->weakness;
-    }
-
-    public function getResistance()
-    {
-        return $this->resistance;
-    }               
-
-    public function sayOneliner()
-    {
-        return $this->oneliner;
-    }    
 }
+
+?>
